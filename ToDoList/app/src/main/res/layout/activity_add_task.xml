@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_add_task"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.harshshah.todolist.AddTask">
+
+    <TextView
+        android:id="@+id/descriptionT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:padding="4dp"
+        android:text="Description: "
+        android:textColor="@android:color/black"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/DField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/descriptionT"
+        android:inputType="textCapSentences|textMultiLine"
+        android:maxLength="200"
+        android:padding="4dp"
+        android:maxLines="3"
+        android:hint="Enter a description here"
+        android:textSize="17sp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="160dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/dueDateTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:padding="4dp"
+            android:text="Due date: "
+            android:textColor="@android:color/black"
+            android:textSize="20sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/currentDateLabel"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:layout_toRightOf="@+id/dueDateTitle"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/datepickerB"
+            android:text="pick A date"
+            android:onClick="showTimePickerDialog"
+            android:layout_below="@+id/currentDateLabel" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/addButtonClick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:background="@android:color/holo_green_light"
+        android:layout_marginTop="100dp"
+        android:onClick="addTask"
+        android:text="Add Task" />
+    <Button
+        android:id="@+id/cancelButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CANCEL"
+        android:onClick="cancelT"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="40dp"
+        android:background="@android:color/holo_red_light"/>
+
+
+</LinearLayout>
